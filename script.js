@@ -9,3 +9,8 @@ if(agree === 'yes') {
         Cookies.set('cookie-agree', 'yes', {expires: 7});
     };
 }
+
+// クッキー削除(テスト用)
+document.getElementById('testbtn').onclick = function() {
+  Cookies.remove('cookie-agree');
+};
