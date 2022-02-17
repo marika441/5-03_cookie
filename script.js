@@ -1,12 +1,16 @@
 'use strict';
 
 const agree = Cookies.get('cookie-agree');
+const panel = document.getElementById('privacy-panel');
 if(agree === 'yes') {
-    console.log('クッキーを確認しました');
+    // console.log('クッキーを確認しました');
+    document.body.removeChild(panel);
 } else {
-    console.log('クッキーを確認できません');
+    // console.log('クッキーを確認できません');
     document.getElementById('agreebtn').onclick = function() {
+      // 指定した条件でクッキーを保存(expires: 有効期限)
         Cookies.set('cookie-agree', 'yes', {expires: 7});
+        document.body.removeChild(panel);
     };
 }
 
